@@ -39,7 +39,7 @@ void getLine(char* buffer, bool frcint) {
 		}
 	}
 	if (invaild)
-		getLine(buffer, frcint);
+		getLine(buffer, frcint); // FIXME: StackOverFlow
 }
 
 char Qu[][2048] = {
