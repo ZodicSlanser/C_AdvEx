@@ -14,24 +14,21 @@ int length(char* buffer) {
 }
 void getLine(char* buffer, bool frcint) {
 	ZeroMemory(buffer, 128);
-	fflush(stdin);
 	int i = 0;
 	while (true) {
-		char x = char(getchar());
-		if (x == '\n' || i >= 127)
+		char chr = char(getchar());
+		if (chr == '\n' || i >= 127)
 			break;
-		buffer[i] = x;
+		buffer[i] = chr;
 		i++;
 
 	}
-	buffer[i] = 0;
 	bool invaild = false;
-	if (length(buffer) == 0) {
+	if (!length(buffer)) {
 		cout << "Answer cannot be blank! : ";
 		invaild = true;
 	}
-	else if (frcint == true) {
-
+	else if (frcint) {
 		if (length(buffer) != 1) {
 			cout << "Enter ONLY the number of your answer! : ";
 			invaild = true;
